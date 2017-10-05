@@ -19,9 +19,8 @@ public class Main
 		terminal.setCursorVisible(false);
 		terminal.enterPrivateMode();
 		initMonster(monsterArray);
+		printGameOver("******** Mad Code ********", 37, 5);
 		draw();
-		terminal.getTerminalSize();
-
 		while (checkAlive()) {
 			//Wait for a key to be pressed
 			do {
@@ -63,7 +62,7 @@ public class Main
 			draw();
 		}
 		terminal.clearScreen();
-		printGameOver("Game Over!");
+		printGameOver("Game Over!", 44, 14);
 	}
 
 	private static void initMonster(Monstah[] arr) {
@@ -123,15 +122,17 @@ public class Main
 		return true;
 	}
 
+
+
 	public static void check() {
 		for (Monstah elem : monsterArray) {
 			elem.monsterKillMonster(monsterArray);
 		}
 	}
 
-	public static void printGameOver(String s) {
+	public static void printGameOver(String s, int x, int y) {
 		for (int i = 0; i < s.length(); i++) {
-			terminal.moveCursor(44+i, 14);
+			terminal.moveCursor(x+i, y);
 			terminal.putCharacter(s.charAt(i));
 		}
 	}
