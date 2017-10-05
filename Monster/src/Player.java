@@ -15,7 +15,9 @@ public class Player {
 
 	public void drawPlayer(Terminal terminal) {
 		terminal.moveCursor(getPosX(), getPosY());
+		terminal.applyForegroundColor(Terminal.Color.WHITE);
 		terminal.putCharacter(getSymbol());
+		terminal.applyForegroundColor(Main.randomGenerator(255), Main.randomGenerator(255), Main.randomGenerator(255));
 	}
 
 	public void movePlayer() {

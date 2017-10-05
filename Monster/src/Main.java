@@ -133,6 +133,7 @@ public class Main
 	public static void printGameOver(String s, int x, int y) {
 		for (int i = 0; i < s.length(); i++) {
 			terminal.moveCursor(x+i, y);
+			terminal.applyForegroundColor(Terminal.Color.WHITE);
 			terminal.putCharacter(s.charAt(i));
 		}
 	}
