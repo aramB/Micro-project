@@ -1,0 +1,34 @@
+----Player----
+int posX;
+int posY;
+int nextPosX;
+int nextPosY;
+
+
+----MAIN-----
+---- Setup-fas
+int score = 0;
+Spelare s = new spelare();
+monster[] marr = new monster[10];
+initMonster();
+Startpos (spelare, monster)
+Storlek terminal
+skapa terminal
+Draw()
+
+----loopdiloop gameOn
+
+
+
+
+checkKey()
+	player.move(move to next position (nextX, nextY));
+monster.MOve(if monX < playX : x++, same for y)
+Checkstate()//är spelaren död? if ja break, är monster dött if ja kasta monstret ut från banan(åt vänster)?
+Draw();
+
+
+
+----loop end
+Gameover
+visa score
