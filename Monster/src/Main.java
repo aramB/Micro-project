@@ -7,7 +7,6 @@ import java.nio.charset.Charset;
 
 public class Main
 {
-	private int score = 0;
 	public char mon = 'c';//(char) 0b01010101001010110011000101000110001101000011011101000101;
 	private static final int RANGE_FROM_PLAYER = 5;
 	static Terminal terminal = TerminalFacade.createTerminal(System.in, System.out, Charset.forName("UTF32"));
@@ -15,6 +14,7 @@ public class Main
 	static Monstah[] monsterArray = new Monstah[100];
 
 	public static void main(String[] args) throws InterruptedException {
+		int score = 0;
 		Key key;
 		terminal.setCursorVisible(false);
 		terminal.enterPrivateMode();
@@ -60,9 +60,12 @@ public class Main
 			terminal.clearScreen();
 			check();
 			draw();
+			score++;
 		}
 		terminal.clearScreen();
 		printGameOver("Game Over!", 44, 14);
+		printGameOver("======================", 38, 15);
+		printGameOver("Your score: " + score, 43, 16);
 	}
 
 	private static void initMonster(Monstah[] arr) {
