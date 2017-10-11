@@ -69,7 +69,7 @@ public class Main
 	}
 
 	private static void initMonster(Monstah[] arr) {
-		char mon = '\u2615';
+		char mon = "\u1F47D".toCharArray()[0];
 		arr[0] = new Monstah(playah.getPosX() + RANGE_FROM_PLAYER, playah.getPosY() + RANGE_FROM_PLAYER, mon, 1, 1);
 		arr[1] = new Monstah(playah.getPosX() - RANGE_FROM_PLAYER, playah.getPosY() + RANGE_FROM_PLAYER, mon, 1, 1);
 		arr[2] = new Monstah(playah.getPosX() + RANGE_FROM_PLAYER, playah.getPosY() - RANGE_FROM_PLAYER, mon, 1, 1);
